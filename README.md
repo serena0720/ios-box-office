@@ -1,16 +1,13 @@
 # 🎥 박스오피스🍿
 
-
 ## 📖 목차
 
 1. [소개](#소개)
 2. [팀원](#팀원)
 3. [타임라인](#타임라인)
-4. [UML & 파일트리](#UML&파일트리)
-5. [실행 화면](#실행-화면)
-6. [트러블 슈팅](#트러블-슈팅)
-7. [팀 회고](#팀-회고)
-8. [참고 링크](#참고-링크)
+4. [UML & 파일트리](#UML파일트리)
+5. [트러블 슈팅](#트러블-슈팅)
+6. [참고 링크](#참고-링크)
 
 <br>
 
@@ -22,10 +19,10 @@
 혹은 `영화 개별 상세 조회`를 원하시나요?
 저희에게 물어보세요!
 
- **핵심 개념**
+> **핵심 개념**
 > 오픈 API / URLSession / JSON Decoding / CodingKeys / UNIT Test
 
- **핵심 경험**
+> **핵심 경험**
 > 영화진흥위위원회 오픈 API를 참고하여 `오늘의 일일 박스오피스 데이터`와  `영화 개별 상세 데이터` Model를 구현
 > Model을 활용하여 URLSession을 생성하여 JSON 파일을 Fetch
 > JSON 파일 Decode에 대한 UNIT Test 작성
@@ -45,79 +42,68 @@
 <a id="타임라인"></a>
 ## 3. ⏱️ 타임라인
 
-> 프로젝트 기간 :  2023-07-24 ~ 2023-08-04
+> 프로젝트 기간 : 2023-07-24 ~ 2023-08-04
 
 |날짜|내용|
 |:---:|---|
-| **2023.07.24** |▫️  <br> ▫️ |
-| **2023.07.25** |▫️  <br> ▫️ |
-| **2023.07.26** |▫️  <br> ▫️ |
-| **2023.07.27** |▫️  <br> ▫️ |
-| **2023.07.28** |▫️  <br> ▫️ |
+| **2023.07.24** |▫️ 일별 박스 오피스 샘플 json dataset 추가 <br> ▫️ 일별 박스오피스 Model 추가|
+| **2023.07.25** |▫️ 일별 박스오피스 관련 테스트 추가 및 테스트 작성 <br> ▫️ 박스오피스 Model 추가 <br> ▫️ 전체 Model CodingKey 적용|
+| **2023.07.27** |▫️ 네트워크 관련 로직을 처리하는 `NetworkManager` 타입 추가 <br> ▫️ 영화진흥위원회로부터 일별 박스오피스 조회하는 로직 작성|
+| **2023.07.28** |▫️ 영화 상세정보 조회를 위한 DTO 생성 및 CodingKey 적용 <br> ▫️ 영화 상세정보 조회 메서드 추가 <br> ▫️ 매직리터럴 관리를 위한 NameSpace 추가 |
 
 
 <br>
 
-<a id="UML&파일트리"></a>
+<a id="UML파일트리"></a>
 ## 4. 📊 UML & 파일트리
-
-### UML
-> 추후 업로드 예정
-
 ### 파일트리
 ```
-📦BoxOffice
-┗ 📄Info.plist
+BoxOffice
+┗ Info.plist
  ┣ 📂App
- ┃ ┣ 📄AppDelegate.swift
- ┃ ┗ 📄SceneDelegate.swift
+ ┃ ┣ AppDelegate.swift
+ ┃ ┗ SceneDelegate.swift
  ┣ 📂ViewController
- ┃ ┗ 📄ViewController.swift
+ ┃ ┗ ViewController.swift
  ┣ 📂Model
- ┃ ┗ 📄NetworkManager.swift
+ ┃ ┗ NetworkManager.swift
  ┣ 📂DTO
  ┃ ┣ 📂BoxOffice
- ┃ ┃ ┣ 📄BoxOffice.swift
- ┃ ┃ ┣ 📄BoxOfficeResult.swift
- ┃ ┃ ┗ 📄DailyBoxOffice.swift
+ ┃ ┃ ┣ BoxOffice.swift
+ ┃ ┃ ┣ BoxOfficeResult.swift
+ ┃ ┃ ┗ DailyBoxOffice.swift
  ┃ ┗ 📂Movie
- ┃ ┃ ┣ 📄Audit.swift
- ┃ ┃ ┣ 📄Company.swift
- ┃ ┃ ┣ 📄Genre.swift
- ┃ ┃ ┣ 📄Movie.swift
- ┃ ┃ ┣ 📄MovieInfo.swift
- ┃ ┃ ┣ 📄MovieInfoResult.swift
- ┃ ┃ ┣ 📄Nation.swift
- ┃ ┃ ┣ 📄People.swift
- ┃ ┃ ┗ 📄ShowType.swift
+ ┃ ┃ ┣ Audit.swift
+ ┃ ┃ ┣ Company.swift
+ ┃ ┃ ┣ Genre.swift
+ ┃ ┃ ┣ Movie.swift
+ ┃ ┃ ┣ MovieInfo.swift
+ ┃ ┃ ┣ MovieInfoResult.swift
+ ┃ ┃ ┣ Nation.swift
+ ┃ ┃ ┣ People.swift
+ ┃ ┃ ┗ ShowType.swift
  ┣ 📂NameSpace
- ┃ ┣ 📄CustomDateFormatStyle.swift
- ┃ ┣ 📄KobisNameSpace.swift
- ┃ ┗ 📄MimeType.swift
+ ┃ ┣ CustomDateFormatStyle.swift
+ ┃ ┣ KobisNameSpace.swift
+ ┃ ┗ MimeType.swift
  ┣ 📂Extension
- ┃ ┗ 📄JSONDecoder+.swift
+ ┃ ┗ JSONDecoder+.swift
  ┣ 📂Error
- ┃ ┗ 📄JSONDecoderError.swift
+ ┃ ┗ JSONDecoderError.swift
  ┣ 📂Resource
  ┃ ┗ 📂Assets.xcassets
  ┃ ┃ ┗ 📂box_office_sample.dataset
- ┃ ┃   ┣ 📄Contents.json
- ┃ ┃   ┗ 📄box_office_sample.json
- ┣ 📄LaunchScreen.storyboard
- ┗ 📄Main.storyboard  
+ ┃ ┃   ┣ Contents.json
+ ┃ ┃   ┗ box_office_sample.json
+ ┣ LaunchScreen.storyboard
+ ┗ Main.storyboard  
  
 ```
 
-
-<br>
-
-<a id="실행-화면"></a>
-## 5. 📲 실행 화면
-> 추후 업로드 예정
 <br>
 
 <a id="트러블-슈팅"></a>
-## 6. 🛎️ 트러블 슈팅
+## 5. 🛎️ 트러블 슈팅
 
 ## CodingKeys
 ### 🔥 문제점
@@ -182,24 +168,8 @@
 
 <br>
 
-<a id="팀-회고"></a> 
-## 7. 💭 팀 회고
-
-<details>
-<summary>팀 회고</summary>
-
-### 우리팀이 잘한 점😃
-> 추후 작성 예정
-    
-### 우리팀이 아쉬웠던 점😭
-> 추후 작성 예정
-    
-</details>
-
-<br>
-
 <a id="참고-링크"></a>
-## 8. 🔗 참고 링크
+## 6. 🔗 참고 링크
 - [🍎 Developer Apple - XCTFail](https://developer.apple.com/documentation/xctest/xctfail)
 - [🍎 Developer Apple - URLSession](https://developer.apple.com/documentation/foundation/urlsession)
 - [🍎 Developer Apple - Fetching Website Data into Memory](https://developer.apple.com/documentation/foundation/url_loading_system/fetching_website_data_into_memory)
